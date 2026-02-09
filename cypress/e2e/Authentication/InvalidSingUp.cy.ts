@@ -8,5 +8,6 @@ describe('User Sign Up Flow - Tour Trek', () => {
     cy.contains('Sign up').click();
     cy.get('.rounded-t').should('have.text', 'Register');
 
+
   });
 })
