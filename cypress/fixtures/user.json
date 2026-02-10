@@ -1,5 +1,12 @@
 {
-  "Email": "testuser@gmail.com",
-  "Name": "User test",
-  "Passwaord": "User123456"
+  "validUser": {
+    "name": "John Doe",
+    "email": "user.test@gmail.com",
+    "password": "Password123!"
+  },
+  "accentedUser": {
+    "name": "José Álvarez",
+    "email": "jose.test@example.com",
+    "password": "Password123!"
+  }
 }
