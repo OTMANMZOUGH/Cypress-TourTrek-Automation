@@ -2,6 +2,7 @@
   "name": "cypress_project",
   "version": "1.0.0",
   "devDependencies": {
-    "@faker-js/faker": "^10.3.0"
+    "@faker-js/faker": "^10.3.0",
+    "cypress-plugin-tab": "^1.0.5"
   }
 }
