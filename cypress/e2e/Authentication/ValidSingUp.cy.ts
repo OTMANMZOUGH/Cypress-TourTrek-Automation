@@ -84,4 +84,5 @@ describe('Valid Sign Up spec with Faker & Factory', () => {
    SingUp.singUp(user.email, user.name, this.userData.validUser.password);
    SingUp.verifyRedirectToLogin();
  });
+
 })
