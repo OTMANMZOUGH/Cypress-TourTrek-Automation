@@ -1,7 +1,7 @@
 import SingUp from "../../support/PageObjects/SingUp";
 import UserFactory from "../../support/factories/UserFactory";
 
-describe('Valid Sign Up spec with Faker & Factory', () => {
+describe('Valid Sign Up spec', () => {
 
   beforeEach(function () {
     cy.visit('/')
@@ -9,7 +9,6 @@ describe('Valid Sign Up spec with Faker & Factory', () => {
     cy.fixture('user').as('userData')
   })
 
-  // TEST 1: Simple User
  it('1. Sign up with random credentials using Faker', function () {
    // Data generation via Factory
    const user = UserFactory.generateSimpleUser();
@@ -23,7 +22,6 @@ describe('Valid Sign Up spec with Faker & Factory', () => {
    SingUp.verifyRedirectToLogin();
  })
 
- // TEST 2: Complex User (dots and plus signs)
  it('2. Should register with complex email (dots/plus)', function () {
    const user = UserFactory.generateComplexUser();
 
@@ -32,7 +30,6 @@ describe('Valid Sign Up spec with Faker & Factory', () => {
    SingUp.verifyRedirectToLogin();
  });
 
- // TEST 3: Accented Characters (e.g., José)
  it('3. Should register with accented characters', function () {
    const user = UserFactory.generateAccentedUser();
 
@@ -41,7 +38,6 @@ describe('Valid Sign Up spec with Faker & Factory', () => {
    SingUp.verifyRedirectToLogin();
  });
 
- // TEST 5: Short Name (e.g., Yu)
  it('5. Should register with short name (Yu)', function () {
    const user = UserFactory.generateShortNameUser();
 
@@ -50,7 +46,6 @@ describe('Valid Sign Up spec with Faker & Factory', () => {
    SingUp.verifyRedirectToLogin();
  });
 
- // TEST 6: Keyboard Navigation (TAB and ENTER)
  it('6. Validate Sign up using keyboard only', function () {
    const user = UserFactory.generateSimpleUser();
 
@@ -60,7 +55,6 @@ describe('Valid Sign Up spec with Faker & Factory', () => {
    SingUp.verifyRedirectToLogin();
  });
 
- // TEST 7: Multiple User Registrations
  it('7. Multiple users sign up with different valid emails', function () {
    // Register User A
    const userA = UserFactory.generateSimpleUser();
@@ -68,15 +62,14 @@ describe('Valid Sign Up spec with Faker & Factory', () => {
    SingUp.singUp(userA.email, userA.name, this.userData.validUser.password);
    SingUp.verifyRedirectToLogin();
 
-   // Reset or navigate back to start session for User B
+   // Reset or navigate back to start session for User B With email from user A
    cy.visit('/');
    const userB = UserFactory.generateComplexUser();
    SingUp.openModal();
-   SingUp.singUp(userB.email, userB.name, this.userData.validUser.password);
-   SingUp.verifyRedirectToLogin();
+   SingUp.singUp(userA.email, userB.name, this.userData.validUser.password);
+   SingUp.verifyNotRegister();
  });
 
- // TEST 8: Explicit Button Click Validation
  it('8. Validate Sign up via Sign Up button', function () {
    const user = UserFactory.generateSimpleUser();
 
