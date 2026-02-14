@@ -1,4 +1,9 @@
 class Filter {
+    // Helper to get day number from a date object
+    private static getDayNumber(date: Date): string {
+        return date.getDate().toString();
+    }
+
     static openFilters() {
         cy.get('.cursor-pointer').contains('Anywhere').click();
     }
@@ -29,22 +34,24 @@ class Filter {
     }
 
     static selectDates() {
-        // Logic to select a valid date range on the calendar
-        // Selecting today and 5 days from now as a default valid range
-        cy.get('.rdrDayToday').click();
-        cy.get('.rdrDay').contains('25').click();
+        const today = new Date();
+        const nextWeek = new Date();
+        nextWeek.setDate(today.getDate() + 7);
+        // Select Today
+        cy.get('.rdrDay').contains(this.getDayNumber(today)).click();
+        // Select 7 days from now
+        cy.get('.rdrDay').contains(this.getDayNumber(nextWeek)).click();
     }
 
     static selectLongDateRange() {
-        // Logic to select a range exceeding 30-40 days
-        // This usually involves clicking the 'Next Month' arrow
-        cy.get('[aria-label="Next Month"]').click();
-        cy.get('.rdrDay').contains('28').click();
+        cy.get('.rdrDayToday').click();
+        cy.get('rdrNextButton').last().click();
+        cy.get('.rdrDay').contains('25').click();
     }
 
     static selectGuests() {
-        // Adding 1 guest/info to satisfy "More Info" step
-        cy.get('gap-4').find('button').last().click();
+        // Selects the first "+" button on the page
+        cy.get('.rounded-full').eq(1).click();
     }
 }
 
