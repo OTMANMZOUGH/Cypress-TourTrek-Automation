@@ -44,7 +44,7 @@ describe('Filter and Search Functionality', () => {
         Filter.clickSearch();
 
         // 3.1 Assertion: Results match criteria
-        cy.get('.listing-card').should('be.visible');
+        cy.get('.group').should('be.visible');
         cy.url().should('include', 'locationValue=MA');
     });
 
