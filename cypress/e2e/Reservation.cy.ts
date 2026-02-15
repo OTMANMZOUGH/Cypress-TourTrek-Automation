@@ -16,8 +16,6 @@ describe('Reservation and Favorites Suite', () => {
         it('1, 2, 3. Verify successful reservation and redirection', () => {
             Reservation.selectDates();
             Reservation.clickReserve();
-
-            // 2.1 & 3.1 Assertion: Redirected to "Trips" or "My Reservations"
             cy.contains('Listing reserved!').should('be.visible');
         });
 
@@ -27,6 +25,7 @@ describe('Reservation and Favorites Suite', () => {
             Reservation.verifyCalculatedTotal();
             Reservation.clickReserve();
         });
+
         it('Test Case 5: Verify past dates cannot be selected', () => {
             Reservation.verifyPastDatesBlocked();
         });
