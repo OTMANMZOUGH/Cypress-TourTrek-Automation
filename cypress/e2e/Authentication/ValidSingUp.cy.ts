@@ -15,7 +15,7 @@ describe('Valid Sign Up spec', () => {
    const password = this.userData.validUser.password;
 
    // Save email in Cypress environment for potential reuse in Login tests
-   Cypress.env('lastCreatedUser', user.email);
+   Cypress.env('lastCreatedUserEmail', user.email);
 
    SingUp.openModal();
    SingUp.singUp(user.email, user.name, password);
