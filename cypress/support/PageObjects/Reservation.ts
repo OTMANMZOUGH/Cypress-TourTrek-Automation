@@ -26,7 +26,7 @@ class Reservation {
 
     static toggleFavorite() {
         // Selecting the heart icon
-        cy.get('div').find('svg').first().parent().click();
+        cy.get('.group').find('svg').first().parent().click();
     }
 
     static verifyCalculatedTotal() {
