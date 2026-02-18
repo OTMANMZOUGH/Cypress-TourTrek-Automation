@@ -67,7 +67,7 @@ class Reservation {
         });
     }
 
-    static navigateTo(page: 'Trips' | 'Favorites' | 'Reservations') {
+    static navigateTo(page: 'My trips' | 'My favorites' | 'My reservations') {
         cy.get('#user-menu').click();
         cy.contains(page).click();
     }
