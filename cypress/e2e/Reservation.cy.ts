@@ -13,7 +13,7 @@ describe('Reservation and Favorites Suite', () => {
            cy.wait(4000);
         });
 
-/*
+
         it('1, 2, 3. Verify successful reservation and redirection', () => {
             Reservation.selectDates();
             Reservation.clickReserve();
@@ -30,7 +30,7 @@ describe('Reservation and Favorites Suite', () => {
         it('Test Case 5: Verify past dates cannot be selected', () => {
             Reservation.verifyPastDatesBlocked();
         });
-*/
+
         it('8, 9, 10. Verify Favorites functionality and persistence', () => {
             // 8.2 Click Heart
             Reservation.toggleFavorite();
@@ -51,7 +51,7 @@ describe('Reservation and Favorites Suite', () => {
             cy.get('.listing-card').should('have.length.at.least', 1);
         });
     });
-/*
+
     context('Prereq: User is not logged in', () => {
         beforeEach(() => {
             cy.visit('/');
@@ -72,6 +72,4 @@ describe('Reservation and Favorites Suite', () => {
             cy.contains('Login').should('be.visible');
         });
     });
-
- */
 });
