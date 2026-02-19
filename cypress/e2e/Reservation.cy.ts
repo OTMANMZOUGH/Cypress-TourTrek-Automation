@@ -47,7 +47,7 @@ describe('Reservation and Favorites Suite', () => {
 
         it('12. Verify favorite listing appears in Favorites page', () => {
             Reservation.toggleFavorite();
-            Reservation.navigateTo('Favorites');
+            Reservation.navigateTo('My favorites');
             cy.get('.listing-card').should('have.length.at.least', 1);
         });
     });
