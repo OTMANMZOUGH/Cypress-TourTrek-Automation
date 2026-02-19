@@ -72,4 +72,4 @@ class Reservation {
         cy.contains(page).click();
     }
 }
-export default Reservation;
+export default Reservation; 
