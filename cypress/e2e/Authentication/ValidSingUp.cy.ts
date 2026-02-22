@@ -9,6 +9,7 @@ describe('Valid Sign Up spec', () => {
     cy.fixture('user').as('userData')
   })
 
+
  it('1. Sign up with random credentials using Faker', function () {
    // Data generation via Factory
    const user = UserFactory.generateSimpleUser();
