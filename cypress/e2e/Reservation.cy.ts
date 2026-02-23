@@ -13,7 +13,6 @@ describe('Reservation and Favorites Suite', () => {
            cy.wait(4000);
         });
 
-
         it('1, 2, 3. Verify successful reservation and redirection', () => {
             Reservation.selectDates();
             Reservation.clickReserve();
