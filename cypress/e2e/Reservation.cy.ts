@@ -10,7 +10,6 @@ describe('Reservation and Favorites Suite', () => {
             Login.login(Cypress.env('lastCreatedUserEmail'), 'Password123!');
            cy.wait(4000);
         });
-
         it('1, 2, 3. Verify successful reservation and redirection', () => {
             Reservation.selectDates();
             Reservation.clickReserve();
