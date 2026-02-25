@@ -6,13 +6,10 @@ describe('Reservation and Favorites Suite', () => {
     context('Prereq: User is logged in', () => {
         beforeEach(() => {
             cy.visit('/');
-            // Log in using environment variables from previous steps
             Login.openModal();
             Login.login(Cypress.env('lastCreatedUserEmail'), 'Password123!');
-            // Open the first available listing
            cy.wait(4000);
         });
-
         it('1, 2, 3. Verify successful reservation and redirection', () => {
             Reservation.selectDates();
             Reservation.clickReserve();
