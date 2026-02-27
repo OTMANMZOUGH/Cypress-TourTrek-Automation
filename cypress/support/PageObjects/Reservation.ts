@@ -27,7 +27,6 @@ class Reservation {
     static toggleFavorite() {
         cy.get('.group').find('svg').first().parent().click();
     }
-
     static verifyCalculatedTotal() {
         cy.get('.text-2xl.font-semibold').invoke('text').then((priceText) => {
             const pricePerNight = parseFloat(priceText.replace(/[^\d.]/g, ''));
