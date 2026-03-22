@@ -4,7 +4,7 @@ A comprehensive web platform for browsing property listings, managing reservatio
 
 ---
 
-## 🚀 Features
+## 🚀 Features 
 
 ### 🔐 Authentication
 - **Secure Sign Up:** Support for international names (accents), complex email formats (aliases), and short names.
@@ -16,7 +16,7 @@ A comprehensive web platform for browsing property listings, managing reservatio
 - **Advanced Search:** Multi-criteria filtering including Country, Date Range, and Listing details.
 - **Rules:** Enforces a maximum reservation limit of 40 days.
 
-### 📅 Reservations & Favorites
+### 📅 Reservations & Favorites 
 - **Booking Engine:** Integrated calendar with past-date disabling.
 - **Dynamic Pricing:** Automatic calculation of total cost (Price per night × Duration).
 - **Favorites:** Persistent "Wishlist" functionality linked to user accounts using a heart-toggle system.
