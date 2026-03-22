@@ -4,7 +4,7 @@ A comprehensive web platform for browsing property listings, managing reservatio
 
 ---
 
-## 🚀 Features 
+## 🚀 Features
 
 ### 🔐 Authentication
 - **Secure Sign Up:** Support for international names (accents), complex email formats (aliases), and short names.
