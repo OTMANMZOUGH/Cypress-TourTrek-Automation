@@ -11,7 +11,7 @@ A comprehensive web platform for browsing property listings, managing reservatio
 - **Login Security:** Masked passwords, SQL injection protection, and keyboard accessibility (Enter key support).
 - **Validation:** Real-time feedback for empty fields, invalid email formats, and duplicate accounts.
 
-### 🔍 Search & Discovery
+### 🔍 Search & Discovery 
 - **Location Filtering:** Filter properties by country (e.g., Morocco).
 - **Advanced Search:** Multi-criteria filtering including Country, Date Range, and Listing details.
 - **Rules:** Enforces a maximum reservation limit of 40 days.
