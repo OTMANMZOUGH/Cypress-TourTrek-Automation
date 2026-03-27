@@ -64,7 +64,6 @@ class Reservation {
             cy.wrap($day).click({ force: true });
         });
     }
-
     static navigateTo(page: 'My trips' | 'My favorites' | 'My reservations') {
         cy.get('#user-menu').click();
         cy.contains(page).click();
